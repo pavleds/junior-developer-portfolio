@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Coffee Store Operations Demo — café workflow portfolio project">
+  <title>Coffee Store Operations Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio-integration.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="logo" href="#" aria-label="Coffee Store Operations Demo home"><span>K</span><strong>coffee store.</strong></a>
+    <nav aria-label="Main navigation">
+      <button class="nav-item active" data-view="pos"><span class="nav-icon">▦</span><span data-t="register">Register</span></button>
+      <button class="nav-item" data-view="kitchen"><span class="nav-icon">◴</span><span data-t="kitchen">Kitchen</span><b id="kitchenCount">0</b></button>
+      <button class="nav-item" data-view="menu"><span class="nav-icon">☷</span><span data-t="menu">Menu</span></button>
+      <button class="nav-item" data-view="reports"><span class="nav-icon">↗</span><span data-t="reports">Reports</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="language" id="languageButton">SR / EN</button>
+      <div class="profile"><span>MN</span><div><strong>Mila</strong><small data-t="shiftManager">Shift manager</small></div></div>
+    </div>
+  </aside>
+
+  <main class="app-shell">
+    <div class="demo-banner"><a href="../../index.html">← Portfolio</a><span data-t="demoNotice">Portfolio demo · No real payments or fiscal receipts</span><button id="resetButton" data-t="resetDemo">Reset demo</button></div>
+
+    <section class="view active" id="pos-view">
+      <header class="topbar">
+        <div><p class="overline" data-t="register">Register</p><h1 data-t="newOrder">New order</h1></div>
+        <div class="topbar-meta"><span class="open-pill"><i></i><span data-t="open">Open</span></span><div><small id="dateLabel"></small><strong id="clockLabel"></strong></div></div>
+      </header>
+      <div class="pos-layout">
+        <div class="catalog">
+          <div class="catalog-tools">
+            <div class="categories" id="categoryFilters"></div>
+            <label class="search"><span>⌕</span><input id="productSearch" type="search" data-placeholder="searchMenu" placeholder="Search menu..."></label>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+        <aside class="order-panel">
+          <div class="order-head"><div><p class="overline" data-t="currentOrder">Current order</p><h2 id="orderNumber">#1048</h2></div><button class="icon-button" id="clearOrder" aria-label="Clear order">×</button></div>
+          <div class="service-toggle"><button class="active" data-service="dineIn" data-t="dineIn">Dine in</button><button data-service="takeaway" data-t="takeaway">Takeaway</button></div>
+          <label class="table-select"><span data-t="table">Table</span><select id="tableSelect"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option></select></label>
+          <div class="cart" id="cart"><div class="empty-cart"><span>☕</span><strong data-t="emptyOrder">Order is empty</strong><p data-t="addFromMenu">Choose an item from the menu</p></div></div>
+          <div class="order-summary">
+            <div><span data-t="subtotal">Subtotal</span><strong id="subtotal">0 RSD</strong></div>
+            <div><span data-t="service">Service</span><strong>0 RSD</strong></div>
+            <div class="total"><span data-t="total">Total</span><strong id="total">0 RSD</strong></div>
+            <button class="send-order" id="sendOrder" disabled><span data-t="sendKitchen">Send to kitchen</span><strong id="sendTotal">0 RSD</strong></button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view" id="kitchen-view">
+      <header class="topbar"><div><p class="overline" data-t="liveOrders">Live orders</p><h1 data-t="kitchenBoard">Kitchen board</h1></div><div class="topbar-meta"><span class="open-pill"><i></i><span data-t="live">Live</span></span></div></header>
+      <div class="kitchen-stats"><div><small data-t="waiting">Waiting</small><strong id="waitingCount">0</strong></div><div><small data-t="preparing">Preparing</small><strong id="preparingCount">0</strong></div><div><small data-t="ready">Ready</small><strong id="readyCount">0</strong></div><button id="clearCompleted" data-t="clearReady">Clear ready orders</button></div>
+      <div class="kanban" id="kitchenBoard"></div>
+    </section>
+
+    <section class="view" id="menu-view">
+      <header class="topbar"><div><p class="overline" data-t="catalog">Catalog</p><h1 data-t="menuManagement">Menu management</h1></div><button class="primary-button" id="addItemButton" data-t="addItem">+ Add item</button></header>
+      <div class="menu-summary"><div><small data-t="totalItems">Total items</small><strong id="totalItems">0</strong></div><div><small data-t="available">Available</small><strong id="availableItems">0</strong></div><div><small data-t="unavailable">Unavailable</small><strong id="unavailableItems">0</strong></div></div>
+      <div class="menu-table-wrap"><table><thead><tr><th data-t="item">Item</th><th data-t="category">Category</th><th data-t="price">Price</th><th data-t="availability">Availability</th><th></th></tr></thead><tbody id="menuTable"></tbody></table></div>
+    </section>
+
+    <section class="view" id="reports-view">
+      <header class="topbar"><div><p class="overline" data-t="overview">Overview</p><h1 data-t="dailyReport">Daily report</h1></div><button class="secondary-button" id="exportButton" data-t="exportCsv">Export CSV</button></header>
+      <div class="report-cards"><article><span>RSD</span><small data-t="revenue">Revenue</small><strong id="revenueMetric">0</strong><p data-t="demoSales">From demo orders today</p></article><article><span>#</span><small data-t="orders">Orders</small><strong id="ordersMetric">0</strong><p data-t="sentKitchen">Sent to kitchen</p></article><article><span>Ø</span><small data-t="averageOrder">Average order</small><strong id="averageMetric">0</strong><p>RSD</p></article><article><span>★</span><small data-t="topItem">Top item</small><strong id="topItemMetric">—</strong><p data-t="byQuantity">By quantity sold</p></article></div>
+      <div class="reports-grid">
+        <article class="chart-card"><div class="card-title"><div><p class="overline" data-t="sales">Sales</p><h2 data-t="ordersByHour">Orders by hour</h2></div></div><div class="chart" id="salesChart"></div></article>
+        <article class="popular-card"><div class="card-title"><div><p class="overline" data-t="performance">Performance</p><h2 data-t="popularItems">Popular items</h2></div></div><div id="popularItems"></div></article>
+      </div>
+      <div class="recent-card"><div class="card-title"><div><p class="overline" data-t="activity">Activity</p><h2 data-t="recentOrders">Recent orders</h2></div></div><div id="recentOrders"></div></div>
+    </section>
+  </main>
+
+  <dialog id="itemDialog">
+    <form method="dialog" id="itemForm">
+      <div class="dialog-head"><div><p class="overline" data-t="catalog">Catalog</p><h2 data-t="addMenuItem">Add menu item</h2></div><button value="cancel" class="icon-button">×</button></div>
+      <label><span data-t="itemName">Item name</span><input id="newItemName" required maxlength="40"></label>
+      <div class="form-row"><label><span data-t="category">Category</span><select id="newItemCategory"><option value="coffee">Coffee</option><option value="cold">Cold drinks</option><option value="food">Food</option><option value="dessert">Dessert</option></select></label><label><span data-t="priceRsd">Price (RSD)</span><input id="newItemPrice" required type="number" min="1" max="100000"></label></div>
+      <label><span data-t="shortDescription">Short description</span><input id="newItemDescription" maxlength="60"></label>
+      <div class="dialog-actions"><button value="cancel" class="secondary-button" data-t="cancel">Cancel</button><button value="default" class="primary-button" id="saveItemButton" data-t="saveItem">Save item</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

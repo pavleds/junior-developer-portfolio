@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio demo sajta autobuske stanice Vrnjačka Banja.">
+  <title>Vrnjačka Banja | Autobuska stanica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio-integration.css">
+</head>
+<body>
+  <div class="demo-bar"><span data-i18n="demo">Portfolio projekat — prikazani polasci i cene su demonstracioni podaci.</span><a href="../../index.html">← Portfolio</a></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Početna">
+      <span class="brand-mark" aria-hidden="true">VB</span>
+      <span><strong>Vrnjačka Banja</strong><small data-i18n="station">Autobuska stanica</small></span>
+    </a>
+    <nav aria-label="Glavna navigacija">
+      <a href="#departures" data-i18n="departures">Polasci</a>
+      <a href="#station" data-i18n="stationInfo">Stanica</a>
+      <a href="#contact" data-i18n="contact">Kontakt</a>
+    </nav>
+    <button class="language" id="languageButton" type="button" aria-label="Switch language">EN</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Put počinje ovde</p>
+        <h1 data-i18n="heroTitle">Iz banje,<br><em>pravo na put.</em></h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">Pronađite polazak, proverite peron i isplanirajte sledeće putovanje — brzo i jednostavno.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#departures" data-i18n="findDeparture">Pronađi polazak</a>
+          <a class="button secondary" href="#station" data-i18n="stationDetails">Informacije o stanici</a>
+        </div>
+      </div>
+      <div class="route-card" aria-label="Sledeći polazak">
+        <div class="route-card-top"><span data-i18n="nextDeparture">Sledeći polazak</span><span class="live"><i></i> <span data-i18n="onTime">Na vreme</span></span></div>
+        <div class="route-time">08:15</div>
+        <div class="route-line"><span>Vrnjačka Banja</span><i></i><span>Beograd</span></div>
+        <div class="route-meta"><span><small data-i18n="platform">Peron</small> 3</span><span><small data-i18n="carrier">Prevoznik</small> Demo Trans</span><span><small data-i18n="duration">Trajanje</small> 3h 10m</span></div>
+      </div>
+    </section>
+
+    <section class="departures section" id="departures">
+      <div class="section-heading">
+        <div><p class="eyebrow" data-i18n="timetable">Red vožnje</p><h2 data-i18n="todayDepartures">Današnji polasci</h2></div>
+        <p id="currentDate"></p>
+      </div>
+      <div class="search-panel">
+        <label><span data-i18n="destination">Destinacija</span><input id="searchInput" type="search" placeholder="Pretraži grad..." autocomplete="off"></label>
+        <label><span data-i18n="period">Period</span><select id="periodFilter"><option value="all" data-i18n="allDay">Ceo dan</option><option value="morning" data-i18n="morning">Pre podne</option><option value="afternoon" data-i18n="afternoon">Posle podne</option><option value="evening" data-i18n="evening">Veče</option></select></label>
+        <button class="button primary search-button" id="searchButton" type="button" data-i18n="search">Pretraži</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th data-i18n="time">Vreme</th><th data-i18n="route">Relacija</th><th data-i18n="platform">Peron</th><th data-i18n="carrier">Prevoznik</th><th data-i18n="price">Cena</th><th data-i18n="status">Status</th></tr></thead>
+          <tbody id="departuresBody"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" hidden><strong data-i18n="noResults">Nema pronađenih polazaka.</strong><span data-i18n="tryAnother">Pokušajte drugu destinaciju ili period.</span></div>
+      </div>
+    </section>
+
+    <section class="station-section" id="station">
+      <div class="station-visual"><div class="map-grid"></div><span class="map-pin">VB</span><div class="map-label"><strong data-i18n="youAreHere">Ovde ste</strong><small data-i18n="centerDistance">Centar Vrnjačke Banje · 1,2 km</small></div></div>
+      <div class="station-copy">
+        <p class="eyebrow" data-i18n="beforeTravel">Pre putovanja</p>
+        <h2 data-i18n="everythingNearby">Sve što vam treba,<br>na jednom mestu.</h2>
+        <p data-i18n="stationText">Stanica je lako dostupna iz centra. Dođite najmanje 15 minuta pre polaska i proverite broj perona na displeju.</p>
+        <div class="amenities">
+          <div><span>24/7</span><p data-i18n="waitingRoom">Čekaonica</p></div>
+          <div><span>☕</span><p data-i18n="cafe">Kafe i užina</p></div>
+          <div><span>Wi-Fi</span><p data-i18n="freeNetwork">Besplatna mreža</p></div>
+          <div><span>i</span><p data-i18n="infoDesk">Info pult</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice section">
+      <div><p class="eyebrow" data-i18n="travelNotice">Obaveštenje</p><h2 data-i18n="arriveEarly">Planirajte dolazak ranije.</h2></div>
+      <p data-i18n="noticeText">Tokom vikenda i praznika moguća su odstupanja od reda vožnje. Informacije u ovom portfolio projektu nisu zvanične.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-brand"><span class="brand-mark">VB</span><div><strong>Vrnjačka Banja</strong><p data-i18n="demoProject">Nezvanični portfolio projekat</p></div></div>
+    <div><strong data-i18n="navigation">Navigacija</strong><a href="#departures" data-i18n="departures">Polasci</a><a href="#station" data-i18n="stationInfo">Stanica</a></div>
+    <div><strong data-i18n="important">Važno</strong><p data-i18n="footerWarning">Ne koristiti za stvarno planiranje putovanja. Svi podaci su demonstracioni.</p></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

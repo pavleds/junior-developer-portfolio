@@ -1,0 +1,3 @@
+/* Content is intentionally visible without JavaScript. This avoids blank sections in browsers where an intersection observer is delayed or unavailable. */
+.reveal,.reveal.visible{opacity:1;transform:none;transition:none}
+@media(max-width:600px){body{overflow-x:hidden}.hero{width:100%}.hero h1{display:block;width:340px;max-width:calc(100vw - 36px);min-width:0;font-size:42px;white-space:normal;word-break:normal;overflow-wrap:anywhere}.hero-bottom>p{font-size:16px;width:340px;max-width:calc(100vw - 36px);min-width:0;overflow-wrap:anywhere}.hero,.hero-bottom,.hero-actions{min-width:0;max-width:100%;width:100%}}
