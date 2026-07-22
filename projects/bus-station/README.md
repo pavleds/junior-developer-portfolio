@@ -19,3 +19,8 @@ Open `index.html` in a browser. For the best result, use a local development ser
 ## Important
 
 This is an unofficial portfolio project. Timetables, operators, prices, platform numbers, amenities, and other details are invented demonstration data and must not be used for real journey planning.
+## Recent polish
+
+- Added a clear-filters action for quick timetable exploration.
+- Improved table hover, focus states and small-screen search layout.
+- The timetable remains clearly marked as demonstration data.

@@ -1,0 +1,9 @@
+/* Product-polish layer: make the demo feel tactile and easier to scan. */
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.product-card{box-shadow:0 3px 0 rgba(31,33,30,.03)}
+.product-card:active{transform:translateY(1px) scale(.99)}
+.send-order:not(:disabled){box-shadow:0 8px 18px rgba(217,79,43,.22)}
+.kitchen-stats>div,.report-cards article,.menu-summary>div{box-shadow:0 6px 20px rgba(31,33,30,.04)}
+.ticket{animation:ticket-in .25s ease both}
+@keyframes ticket-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.topbar{position:sticky;top:0;z-index:5}.order-panel{box-shadow:0 -8px 25px rgba(31,33,30,.08)}}

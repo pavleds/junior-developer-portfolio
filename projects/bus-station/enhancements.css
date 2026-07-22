@@ -1,0 +1,11 @@
+/* Product-polish layer: clearer focus states, controls and small-screen comfort. */
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.search-panel{border-radius:12px;box-shadow:0 14px 35px rgba(23,33,29,.06)}
+.search-panel .button{white-space:nowrap}
+.clear-filters{align-self:end;border:1px solid var(--line);background:transparent;color:var(--muted);min-height:50px;padding:0 15px;border-radius:3px;font:700 13px "DM Sans";cursor:pointer}
+.clear-filters:hover{border-color:var(--orange);color:var(--ink);background:#fffaf0}
+.table-wrap{border-radius:12px;box-shadow:0 14px 35px rgba(23,33,29,.05)}
+tbody tr{transition:background .18s,transform .18s}
+tbody tr:hover{background:#fff9ef;transform:translateX(2px)}
+.route-card{border-radius:4px}
+@media(max-width:800px){.clear-filters{width:100%}}

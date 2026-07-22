@@ -24,3 +24,8 @@ This project demonstrates interface design, state management, filtering, calcula
 ## Production limitations
 
 This is not a certified POS or fiscal cash register. It has no authentication, cloud database, real-time multi-device sync, payment processing, fiscal receipt integration, backups, or production security. Those would be separate requirements before use in a real business.
+## Recent polish
+
+- Kitchen orders now stay synchronized with the live status counts.
+- Menu actions, order controls and kitchen tickets have clearer focus and motion states.
+- The demo remains local-first and uses browser storage; it does not process real payments.
