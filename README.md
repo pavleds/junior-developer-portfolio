@@ -8,7 +8,7 @@ Open `index.html` in a modern browser. No installation is required.
 
 ## Projects
 
-- **Vrnjačka Banja Bus Station:** bilingual departure search, time filters, statuses, and responsive public information.
+- **Banja Bus Station:** bilingual departure search, time filters, statuses, and responsive public information.
 - **Kafa Café Operations:** register, kitchen workflow, menu availability, reporting, CSV export, localization, and browser persistence.
 
 ## Customize before publishing
