@@ -9,3 +9,29 @@ tbody tr{transition:background .18s,transform .18s}
 tbody tr:hover{background:#fff9ef;transform:translateX(2px)}
 .route-card{border-radius:4px}
 @media(max-width:800px){.clear-filters{width:100%}}
+
+/* Visual refresh */
+body{background:radial-gradient(circle at 88% 8%,rgba(184,217,199,.28),transparent 28%),var(--cream)}
+.site-header{position:relative;z-index:4}
+.brand-mark{box-shadow:0 9px 22px rgba(237,106,59,.26)}
+.site-header nav a{position:relative}
+.site-header nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:var(--orange);transition:right .2s}
+.site-header nav a:hover:after{right:0}
+.hero{background:radial-gradient(circle at 82% 18%,rgba(184,217,199,.15),transparent 31%),linear-gradient(135deg,#17382e 0%,#234b3d 55%,#2b5949 100%)}
+.hero-copy{animation:hero-in .65s ease both}
+.route-card{border-radius:16px;box-shadow:18px 18px 0 rgba(184,217,199,.92),0 28px 60px rgba(0,0,0,.22);animation:hero-in .65s .1s ease both}
+@keyframes hero-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.button{border-radius:8px;transition:transform .18s,box-shadow .18s}
+.button:hover{transform:translateY(-2px)}
+.button.primary:hover{box-shadow:0 12px 25px rgba(237,106,59,.25)}
+.search-panel{padding:20px;border-radius:16px;background:rgba(255,253,248,.92);backdrop-filter:blur(10px)}
+.search-panel input,.search-panel select{border-radius:8px}
+.table-wrap{border-radius:16px;overflow:hidden}
+thead{background:#eef1ea}
+tbody tr:nth-child(even){background:rgba(244,240,231,.42)}
+.status{box-shadow:inset 0 0 0 1px rgba(40,99,69,.08)}
+.station-visual{background:linear-gradient(145deg,#d9e8dc,#b7d1bf)}
+.map-label{border-radius:10px;box-shadow:0 14px 30px rgba(35,75,61,.12)}
+.amenities div{transition:background .18s,transform .18s}
+.amenities div:hover{background:#f9f6ee;transform:translateY(-2px)}
+@media(max-width:520px){.route-card{border-radius:12px;box-shadow:9px 9px 0 var(--mint),0 20px 40px rgba(0,0,0,.18)}.search-panel{padding:14px}.table-wrap{border-radius:12px}}
