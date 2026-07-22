@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Apex Garage — fictional performance car marketplace portfolio demo.">
+  <title>Apex Garage — Performance Cars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-bar"><a href="../../index.html">← Portfolio</a><span>Fictional marketplace demo · No real vehicles or finance offers</span></div>
+  <header class="header">
+    <a class="brand" href="#top"><span>A</span><strong>APEX<small>GARAGE</small></strong></a>
+    <nav><a href="#inventory">Inventory</a><a href="#compare">Compare</a><a href="#finance">Finance</a></nav>
+    <button class="saved-button" id="savedButton">Saved <b id="savedCount">0</b></button>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-art" aria-hidden="true"><div class="car-silhouette"><i></i><b></b><span></span></div></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Curated performance inventory</p>
+        <h1>Built to be<br><em>driven.</em></h1>
+        <p>Explore a fictional collection of modern performance cars. Filter the inventory, save favourites and compare specifications.</p>
+        <div class="hero-actions"><a class="button primary" href="#inventory">Browse inventory</a><button class="button ghost" id="featuredButton">View featured car</button></div>
+      </div>
+      <div class="hero-stats"><span><b>08</b> vehicles</span><span><b>500+</b> average hp</span><span><b>100%</b> demo data</span></div>
+    </section>
+    <section class="inventory section" id="inventory">
+      <div class="section-head"><div><p class="eyebrow">Available now</p><h2>Find your next machine.</h2></div><p id="resultCount"></p></div>
+      <div class="filters">
+        <label>Search<input id="searchInput" type="search" placeholder="Brand or model"></label>
+        <label>Brand<select id="brandFilter"><option value="all">All brands</option></select></label>
+        <label>Transmission<select id="transmissionFilter"><option value="all">All types</option><option>Automatic</option><option>Manual</option></select></label>
+        <label>Maximum price<select id="priceFilter"><option value="999999">No limit</option><option value="80000">€80,000</option><option value="120000">€120,000</option><option value="180000">€180,000</option></select></label>
+        <button id="clearFilters">Clear</button>
+      </div>
+      <div class="car-grid" id="carGrid"></div>
+      <div class="empty" id="emptyState" hidden><strong>No cars match those filters.</strong><button id="emptyReset">Reset inventory</button></div>
+    </section>
+    <section class="compare section dark" id="compare">
+      <div class="section-head"><div><p class="eyebrow">Side by side</p><h2>Compare your shortlist.</h2></div><p>Select up to two vehicles from the inventory.</p></div>
+      <div class="compare-grid" id="compareGrid"></div>
+    </section>
+    <section class="finance section" id="finance">
+      <div class="finance-copy"><p class="eyebrow">Demo calculator</p><h2>Estimate the numbers.</h2><p>Adjust the price, deposit and term to see a simple illustrative monthly estimate. This is not a real finance offer.</p></div>
+      <form class="calculator" id="calculator">
+        <label>Vehicle price <span id="priceValue">€90,000</span><input id="calcPrice" type="range" min="30000" max="220000" step="5000" value="90000"></label>
+        <label>Deposit <span id="depositValue">€18,000</span><input id="calcDeposit" type="range" min="0" max="60000" step="1000" value="18000"></label>
+        <label>Term <select id="calcTerm"><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></label>
+        <div class="estimate"><small>Illustrative monthly payment</small><strong id="monthlyEstimate">€0</strong><span>at a fictional 6.9% APR</span></div>
+      </form>
+    </section>
+  </main>
+  <dialog id="carDialog"><button class="dialog-close" id="dialogClose" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+  <dialog id="enquiryDialog"><form id="enquiryForm"><button class="dialog-close" type="button" id="enquiryClose">×</button><p class="eyebrow">Vehicle enquiry</p><h2 id="enquiryTitle">Enquire</h2><label>Name<input required name="name"></label><label>Email<input required type="email" name="email"></label><label>Message<textarea required name="message" rows="4"></textarea></label><button class="button primary" type="submit">Send demo enquiry</button><small>No information is transmitted. This form is a front-end demonstration.</small></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <footer><div class="brand"><span>A</span><strong>APEX<small>GARAGE</small></strong></div><p>Fictional automotive marketplace built as a front-end portfolio demonstration.</p><a href="#top">Back to top ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>

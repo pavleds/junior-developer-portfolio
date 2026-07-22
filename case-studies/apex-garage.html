@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Case study for the Apex Garage performance-car marketplace concept">
+  <title>Apex Garage Case Study — Pavle</title>
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+  <nav class="case-nav"><a href="../index.html">← Portfolio</a><strong>Case study 01</strong><a href="../projects/apex-garage/index.html">Live demo ↗</a></nav>
+  <header class="case-hero"><p class="eyebrow">Automotive · Marketplace</p><h1>Apex<br>Garage</h1><p>A premium browsing experience that turns a large performance-car collection into a focused shortlist.</p><div class="case-meta"><span><small>Role</small><strong>Design & development</strong></span><span><small>Timeline</small><strong>Portfolio sprint</strong></span><span><small>Stack</small><strong>HTML · CSS · JS</strong></span><span><small>Storage</small><strong>Browser localStorage</strong></span></div></header>
+  <div class="hero-visual bus"><div class="visual-window"><div class="visual-bar"><i></i><i></i><i></i></div><div class="visual-content"><strong>Find the car.<br>Feel the difference.</strong></div></div></div>
+  <main class="case-body">
+    <section><h2>The problem</h2><div><p>Enthusiast car listings are exciting, but comparing options across price, power, transmission, and body style can quickly become noisy. Buyers need an easy way to narrow a collection without losing the emotion of the cars.</p><p>Apex Garage is a fictional front-end marketplace concept. Its inventory, prices, finance figures, and enquiries are demonstrations only.</p></div></section>
+    <section><h2>The approach</h2><div><p>I combined a cinematic visual direction with practical shopping tools. The interface keeps the collection aspirational while making every next step obvious.</p><div class="decision-grid"><article><strong>Fast discovery</strong><p>Search, brand, transmission, and price controls update the inventory immediately.</p></article><article><strong>Shortlisting</strong><p>Saved cars persist between visits through browser storage.</p></article><article><strong>Clear comparison</strong><p>Buyers can place two cars side by side and compare the specifications that matter.</p></article><article><strong>Useful next steps</strong><p>An illustrative finance calculator and enquiry form complete the browsing journey.</p></article></div></div></section>
+    <section><h2>Technical details</h2><div><h3>Data-driven inventory</h3><p>Every listing is generated from a JavaScript vehicle object, keeping filtering, details, comparison, finance, and saved state connected to one source of truth.</p><h3>Persistent favourites</h3><p>Saved vehicle IDs are serialized into localStorage. The header count and listing buttons update from the same state after every action.</p><h3>Accessible interactions</h3><p>Native dialog elements provide focused details and enquiry flows, while labelled form controls, keyboard-friendly buttons, and reduced-motion support make the experience easier to operate.</p><h3>Production boundaries</h3><p>A real marketplace would require a secure backend, authenticated dealer accounts, database inventory, image storage, server-side validation, compliant finance integrations, and protected customer data.</p></div></section>
+    <section><h2>What I learned</h2><div><ul><li>A strong visual identity works best when it supports rather than competes with the buying task.</li><li>One structured dataset can power several interface features without duplicating logic.</li><li>Comparison limits should be visible and forgiving, with clear feedback when reached.</li><li>Demo finance tools must explain their assumptions and avoid presenting estimates as offers.</li></ul></div></section>
+  </main>
+  <section class="outcome"><h2>The outcome</h2><p>A polished, responsive automotive marketplace prototype with live filters, persistent favourites, two-car comparison, vehicle details, an illustrative finance estimate, and an enquiry flow.</p><a href="../projects/apex-garage/index.html">Explore the live demo ↗</a></section>
+  <div class="next-project"><a href="bus-station.html">Next case study: Bus Station →</a></div>
+</body>
+</html>
